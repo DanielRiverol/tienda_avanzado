@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 // app.use("/api/orders", orderRouter);
 
 //listeners
-// dbConnect();
+dbConnect();
 app.listen(app.get("PORT"), () => {
   console.log(`Server on port http://localhost:${app.get("PORT")}`);
 });
