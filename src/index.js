@@ -1,7 +1,7 @@
 import express from "express";
-// import customerRouter from "./routes/customer.router.js";
-// import productRouter from "./routes/product.router.js";
-// import orderRouter from "./routes/order.router.js";
+import customerRouter from "./routes/customer.router.js";
+import productRouter from "./routes/product.router.js";
+import orderRouter from "./routes/order.router.js";
 import dbConnect from "./config/db.js";
 //settings
 const app = express();
@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.json({ title: "Home Page" });
 });
-// app.use("/api/customers", customerRouter);
-// app.use("/api/products", productRouter);
-// app.use("/api/orders", orderRouter);
+app.use("/api/customers", customerRouter);
+app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
 
 //listeners
 dbConnect();
