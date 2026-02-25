@@ -2,7 +2,6 @@ import { Router } from "express";
 import Product from "../models/product.model.js";
 const router = Router();
 
-
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find();
@@ -30,6 +29,5 @@ router.get("/filter", async (req, res) => {
     res.status(500).json({ status: "fail", message: error.message });
   }
 });
-
 
 export default router;
